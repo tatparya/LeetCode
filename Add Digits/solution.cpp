@@ -1,17 +1,20 @@
 class Solution {
 public:
     int addDigits(int num) {
-		int sum = 0;
-		int temp = num;
-		while( temp > 0 || sum > 9 ){
-			if( temp == 0 && sum > 9 ){
-				temp = sum;
-				sum = 0;
-			}
-			sum += temp % 10;
-			temp = temp / 10;
-		}
 
-		return sum;
+		// 	1 = 1
+		// 	2 = 2
+		//	10 = 1
+		// 	11 = 2
+		// 	12 = 3
+		//	13 = 4
+		//	14 = 5
+		//	15 = 6
+		//	16 = 7
+		//	17 = 8
+		//	18 = 9
+		//	19 = 10 = 1
+
+		return 1 + ( num - 1 ) % 9;
     }
 };
